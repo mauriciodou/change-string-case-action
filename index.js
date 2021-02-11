@@ -11,7 +11,7 @@ try {
 
     const uppercase = inputStr.toUpperCase();
     console.log(`uppercase: ${uppercase}`);
-    core.setOutput("uppercase", uppercase);
+    core.setOutput("uppercase", uppercase.replace(/-/g, '_'));
 
     const capitalized = inputStr.charAt(0).toUpperCase() + inputStr.slice(1).toLowerCase();
     console.log(`capitalized: ${capitalized}`);
