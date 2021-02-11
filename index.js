@@ -2,7 +2,7 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 
 try {
-    const inputStr = core.getInput('string');
+    const inputStr = core.getInput('string').replace(/krogertechnology\//g, '');
     console.log(`Manipulating string: ${inputStr}`);
 
     const lowercase = inputStr.toLowerCase();
