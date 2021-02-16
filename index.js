@@ -2,7 +2,7 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 
 try {
-    const inputStr = core.getInput('string').replace(/krogertechnology\//g, '');
+    const inputStr = core.getInput('string').replace(/krogertechnology\//g, '').replace(/-/g, '_');
     console.log(`Manipulating string: ${inputStr}`);
 
     const lowercase = inputStr.toLowerCase();
@@ -11,7 +11,7 @@ try {
 
     const uppercase = inputStr.toUpperCase();
     console.log(`uppercase: ${uppercase}`);
-    core.setOutput("uppercase", uppercase.replace(/-/g, '_'));
+    core.setOutput("uppercase", uppercase);
 
     const capitalized = inputStr.charAt(0).toUpperCase() + inputStr.slice(1).toLowerCase();
     console.log(`capitalized: ${capitalized}`);
